@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>文件上传</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+	<h1>文件上传</h1>
+	<form action="/api/upload" method="post" class="upload-form" enctype="multipart/form-data">
+		<div class="upload">
+			选择文件 <input type="file" name="head_img" />
+		</div>
+		<input type="text" name="name" placeholder="请输入用户名" /> <input type="submit" value="上传" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5 服务器发送事件(Server-Sent Events)</title>
+</head>
+<body>
+	<h1>获取服务端更新数据</h1>
+	<div id="result"></div>
+
+	<script>
+		if (typeof (EventSource) !== "undefined") {
+			var source = new EventSource("/sse/data");
+			source.onmessage = function(event) {
+				document.getElementById("result").innerHTML = event.data;
+			};
+		} else {
+			document.getElementById("result").innerHTML = "抱歉，你的浏览器不支持 server-sent 事件...";
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+mvn -v  		查看maven版本；
+mvn compile  	编译
+mvn test 		测试
+mvn package  	打包
+mvn clean 		删除target
+mvn install 	安装jar到本地仓库
+mvn -v 
+
+创建目录的两种方式：
+1、archetype:gennerate 按照提示进行选择；
+2、archetype:gennerate -Dgroupld=组织名（公司网址的反写+项目名）
+					   -DartifactId=项目名-模块名
+					   -Dversion=版本号
+					   -Dpackage=包名

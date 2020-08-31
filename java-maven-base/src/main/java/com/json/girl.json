@@ -1,0 +1,15 @@
+{
+  "name": "Lcuy",
+  "female": true,
+  "hobbies": [
+    "yoga",
+    "swimming"
+  ],
+  "age": 26,
+  "features": {
+    "weight": 50,
+    "height": 170
+  },
+  "birthday": "1996-02-15",
+  "createTime": "2020-06-19 16:54:54"
+}

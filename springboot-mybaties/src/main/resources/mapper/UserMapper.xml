@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mybaties.mapper.UserMapper">
+	<insert id="addUser" parameterType="com.example.mybaties.entity.User">
+		insert into user (name,age,work,height,weight,country,hobbies,birthday,telephone) VALUES (#{name},#{age},#{work},#{height},#{weight}, #{country},#{hobbies},#{birthday},#{telephone})
+	</insert>
+	<update id="updateUser" parameterType="com.example.mybaties.entity.User">
+		<!-- update user set name=#{name},age=#{age},telephone=#{telephone} where id=#{id} -->
+		update user
+		<trim prefix="set" suffixOverrides=",">
+			<if test="name!=null">name=#{name},</if>
+			<if test="age!=0">age=#{age},</if>
+			<if test="telephone!=null">telephone=#{telephone},</if>
+		</trim>
+		where id=#{id}
+	</update>
+	<delete id="deleteUserById" parameterType="com.example.mybaties.entity.User">
+		delete from user WHERE id = #{id}
+	</delete>
+
+	<!-- 根据ID来关联查询 -->
+	<resultMap id="UserInfoByIdMap" type="com.example.mybaties.entity.User">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="hobbies" property="hobbies" />
+		<result column="weight" property="weight" />
+		<result column="height" property="height" />
+		<result column="country" property="country" />
+		<result column="work" property="work" />
+		<result column="birthday" property="birthday" />
+		<result column="telephone" property="telephone" />
+		<!-- 用于配置1对1的映射 -->
+		<association property="company" javaType="com.example.mybaties.entity.Company" column="id">
+			<id property="id" column="company_id"></id>
+			<result property="name" column="company_name"></result>
+		</association>
+		<!-- 用于配置1对多的映射 -->
+		<collection property="bankAccounts" ofType="com.example.mybaties.entity.BankAccount" column="user_id">
+			<id property="id" column="account_id"></id>
+			<result property="name" column="account_name"></result>
+			<result property="cardNumber" column="card_number"></result>
+			<result property="userId" column="user_id"></result>
+		</collection>
+	</resultMap>
+
+	<!-- 所有用户信息关联查询 -->
+	<resultMap id="UserInfoMap" type="com.example.mybaties.entity.User">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="hobbies" property="hobbies" />
+		<result column="weight" property="weight" />
+		<result column="height" property="height" />
+		<result column="country" property="country" />
+		<result column="work" property="work" />
+		<result column="birthday" property="birthday" />
+		<result column="telephone" property="telephone" />
+		<!-- 用于配置1对1的映射 -->
+		<association property="company" javaType="com.example.mybaties.entity.Company" column="id">
+			<id property="id" column="company_id"></id>
+			<result property="name" column="company_name"></result>
+		</association>
+		<!-- 用于配置1对多的映射 -->
+		<collection property="bankAccounts" ofType="com.example.mybaties.entity.BankAccount" column="user_id">
+			<id property="id" column="account_id"></id>
+			<result property="name" column="account_name"></result>
+			<result property="cardNumber" column="card_number"></result>
+			<result property="userId" column="user_id"></result>
+		</collection>
+	</resultMap>
+
+
+	<select id="getUserById" resultMap="UserInfoByIdMap">
+		select
+		u.*,c.id company_id, c.name company_name, a.id account_id,a.name account_name ,a.card_number,a.user_id
+		from user u
+		left join company c on u.company_id=c.id
+		left join bank_account a on u.id=a.user_id
+		WHERE u.id = #{id}
+
+	</select>
+
+	<select id="getAllUserInfo" resultMap="UserInfoMap">
+		select
+		u.*,c.id company_id, c.name company_name, a.id account_id,a.name account_name ,a.card_number,a.user_id
+		from user u
+		left join company c on u.company_id=c.id
+		left join bank_account a on u.id=a.user_id
+	</select>
+</mapper>

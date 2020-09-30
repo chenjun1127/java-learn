@@ -11,7 +11,7 @@
     <module>eureka-client</module>
 </modules>
 ```
-2、在父工程上新建两个springboot子工程，一个eureka的注册中心(eureka-server)，一个eureka客户端(eureka-client)，在父工程的pom文件引入相应的子项目，见上方的pom文件; 子工程新建的时候，分别选择erueka的服务端和客户端jar包，即：
+2、在父工程上新建两个springboot子工程，一个eureka的注册中心(eureka-server)，一个eureka客户端(eureka-client)，同时在父工程的pom文件引入相应的子项目，见上方的pom文件，子项目的pom文件也需要加入对父工程的依赖; 子工程新建的时候，分别选择erueka的服务端和客户端jar包，即：
 
 eureka-server:
 ```

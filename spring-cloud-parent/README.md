@@ -1,4 +1,5 @@
 sring-cloud微服务
+
 1、在idea中新建一个空的maven父工程，相应的配置pom文件可参考如下：
 ```
 <groupId>com.example</groupId>
@@ -11,6 +12,7 @@ sring-cloud微服务
 </modules>
 ```
 2、在父工程上新建两个springboot子工程，一个eureka的注册中心(eureka-server)，一个eureka客户端(eureka-client)，在父工程的pom文件引入相应的子项目，见上方的pom文件; 子工程新建的时候，分别选择erueka的服务端和客户端jar包，即：
+
 eureka-server:
 ```
 <dependency>
@@ -57,4 +59,4 @@ eureka:
 ```
 6、在eureka-client工程的启动类，加上@EnableEurekaClient注解，声明这是erueka的客户端（也就是将此微服务要注册到注册中心）；
 
-7、首先启动eureka-server注册中心，启动之后，再浏览器输入locathsot:port即可看到erueka的注册中心界面，然后再启动eureka-client这个微服务，此时即可看到注册中心里已经有微服务注册进来了。
+7、首先启动eureka-server注册中心，启动之后，再浏览器输入locathsot:port即可看到eureka的注册中心界面，然后再启动eureka-client这个微服务，此时即可看到注册中心里已经有微服务注册进来了。

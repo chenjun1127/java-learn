@@ -11,3 +11,5 @@
 /*/.mvn
 /*/.iml
 /*/.gitignore
+/*/*/.mvn
+/*/*/target

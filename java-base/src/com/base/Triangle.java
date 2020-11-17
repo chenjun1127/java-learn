@@ -1,7 +1,7 @@
 package com.base;
 
 /**
- * @author chenjun 2020Äê6ÔÂ12ÈÕ ÉÏÎç10:04:31 Èı½ÇĞÎÖÜ³¤Ãæ»ı
+ * @author chenjun 2020å¹´6æœˆ12æ—¥ ä¸Šåˆ10:04:31 ä¸‰è§’å½¢å‘¨é•¿é¢ç§¯
  */
 public class Triangle extends Shape {
 	public int a;
@@ -21,13 +21,13 @@ public class Triangle extends Shape {
 	@Override
 	public void calcPerimeter() {
 		this.c = a + b + c;
-		System.out.println("Èı½ÇĞÎµÄÖÜ³¤Îª£º" + this.C);
+		System.out.println("ä¸‰è§’å½¢çš„å‘¨é•¿ä¸ºï¼š" + this.C);
 	}
 
 	@Override
 	public void calcArea() {
 		this.A = a * h * 0.5;
-		System.out.println("Èı½ÇĞÎµÄÃæ»ıÎª£º" + this.C);
+		System.out.println("ä¸‰è§’å½¢çš„é¢ç§¯ä¸ºï¼š" + this.C);
 	}
 
 }

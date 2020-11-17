@@ -4,12 +4,12 @@ public class TestList {
 	public static void main(String[] args) {
 		InitList l = new InitList();
 		l.addCourse();
-		System.out.println("±éÀúµ±Ç°¿Î³Ì£º");
+		System.out.println("éå†å½“å‰è¯¾ç¨‹ï¼š");
 		l.printCourse();
-		System.out.println("¸üĞÂÄ³¸ö¿Î³Ì£º");
-		l.updateCourse(3, new Course("4", "JAVA³ÌĞòÉè¼Æ"));
+		System.out.println("æ›´æ–°æŸä¸ªè¯¾ç¨‹ï¼š");
+		l.updateCourse(3, new Course("4", "JAVAç¨‹åºè®¾è®¡"));
 		l.printCourse();
-		System.out.println("É¾³ıÄ³¸ö¿Î³Ì£º");
+		System.out.println("åˆ é™¤æŸä¸ªè¯¾ç¨‹ï¼š");
 		l.deleteCourse("2");
 		l.printCourse();
 	}

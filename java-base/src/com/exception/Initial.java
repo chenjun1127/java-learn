@@ -3,24 +3,24 @@ package com.exception;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Initail {
+public class Initial {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		try {
-			System.out.println("ÇëÊäÈëµÚÒ»¸öÊı");
+			System.out.println("è¯·è¾“å…¥ç¬¬ä¸€ä¸ªæ•°");
 			int one = input.nextInt();
-			System.out.println("ÇëÊäÈëµÚ¶ş¸öÊı");
+			System.out.println("è¯·è¾“å…¥ç¬¬äºŒä¸ªæ•°");
 			int two = input.nextInt();
-			System.out.println("Á½¸öÊıÏà³ıµÄ½á¹ûÎª£º" + one / two);
+			System.out.println("ä¸¤ä¸ªæ•°ç›¸é™¤çš„ç»“æœä¸ºï¼š" + one / two);
 		} catch (InputMismatchException e) {
 			// TODO: handle exception
-			System.out.print("ÄãÓ¦¸ÃÊäÈëÕûÊı");
+			System.out.print("ä½ åº”è¯¥è¾“å…¥æ•´æ•°");
 
 		} catch (ArithmeticException e) {
-			System.out.print("³ıÊı²»ÄÜÎª0");
+			System.out.print("é™¤æ•°ä¸èƒ½ä¸º0");
 		} catch (Exception e) {
-			System.out.print("Î´ÖªÒì³£");
+			System.out.print("æœªçŸ¥å¼‚å¸¸");
 		}
 	}
 }

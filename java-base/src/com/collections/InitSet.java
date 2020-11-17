@@ -12,38 +12,37 @@ public class InitSet {
 	}
 
 	/**
-	 * Ìí¼Ó¿Î³Ì
+	 * æ·»åŠ è¯¾ç¨‹
 	 */
 	public void addCourse() {
-		Course cr1 = new Course("1", "CÓïÑÔ");
+		Course cr1 = new Course("1", "Cè¯­è¨€");
 		this.courseList.add(cr1);
 		Course temp = (Course) this.courseList.get(0);
-		System.out.println("Ìí¼ÓÁË¿Î³Ì£º" + temp.id + "-->" + temp.name + "\n\t");
-		Course[] course = { new Course("2", "´óÑ§Ó¢Óï"), new Course("3", "¸ßµÈÊıÑ§"), new Course("4", "»·¾³ÒÕÊõÉè¼Æ") };
+		System.out.println("æ·»åŠ äº†è¯¾ç¨‹ï¼š" + temp.id + "-->" + temp.name + "\n\t");
+		Course[] course = { new Course("2", "å¤§å­¦è‹±è¯­"), new Course("3", "é«˜ç­‰æ•°å­¦"), new Course("4", "ç¯å¢ƒè‰ºæœ¯è®¾è®¡") };
 		this.courseList.addAll(Arrays.asList(course));
 	}
 
 	public void printCourse() {
-		List arr = this.courseList;
-		for (int i = 0; i < arr.size(); i++) {
-			Course cr = (Course) arr.get(i);
-			System.out.println("µ±Ç°¿Î³ÌÓĞ£º" + cr.id + "-->" + cr.name);
+		List<Course> arr = this.courseList;
+		for (Course course : arr) {
+			System.out.println("å½“å‰è¯¾ç¨‹æœ‰ï¼š" + ((Course) course).id + "-->" + ((Course) course).name);
 		}
 		System.out.println("\t");
 	}
 
 	/**
-	 * 	²âÊÔcontains
+	 * 	æµ‹è¯•contains
 	 */
 	public void testContains() {
 		Course course = this.courseList.get(0);
-		System.out.println("È¡µÃ¿Î³Ì£º" + course.name);
-		System.out.println("¿Î³ÌÁĞ±íÖĞÊÇ·ñº¬ÓĞ£º" + course.name + "£¬" + this.courseList.contains(course));
+		System.out.println("å–å¾—è¯¾ç¨‹ï¼š" + course.name);
+		System.out.println("è¯¾ç¨‹åˆ—è¡¨ä¸­æ˜¯å¦å«æœ‰ï¼š" + course.name + "ï¼Œ" + this.courseList.contains(course));
 		Course cr = new Course(course.id,course.name);
-//		ĞÂ´´½¨Ò»¸ö¶ÔÏó£¬ºÍÁĞ±íÖĞµÄµÚÒ»¸öÍêÈ«ÏàÍ¬£¬´ËÊ±ÔÙ¼ì²âÁĞ±íÖĞÊÇ·ñº¬ÓĞ£¬ÒÔÏÂÓï¾ä»á·µ»Øfalse£¬ÎªºÎÊÇfalse£¿£¿£¿
-//		½â¾ö·½·¨£ºÖØĞ´courseÀàµÄequals·½·¨»òÕßĞ´Ñ­»·ÅĞ¶Ï£¨±È½ÏÂé·³£©
-//		System.out.println("¿Î³ÌÁĞ±íÖĞÊÇ·ñº¬ÓĞ£º" + cr.name + "£¬" + this.courseList.contains(cr));
-//		ÖØĞ´Ö®ºóµÄ
-		System.out.println("¿Î³ÌÁĞ±íÖĞÊÇ·ñº¬ÓĞ£º" + cr.name + "£¬" + this.courseList.contains(cr));
+//		æ–°åˆ›å»ºä¸€ä¸ªå¯¹è±¡ï¼Œå’Œåˆ—è¡¨ä¸­çš„ç¬¬ä¸€ä¸ªå®Œå…¨ç›¸åŒï¼Œæ­¤æ—¶å†æ£€æµ‹åˆ—è¡¨ä¸­æ˜¯å¦å«æœ‰ï¼Œä»¥ä¸‹è¯­å¥ä¼šè¿”å›falseï¼Œä¸ºä½•æ˜¯falseï¼Ÿï¼Ÿï¼Ÿ
+//		è§£å†³æ–¹æ³•ï¼šé‡å†™courseç±»çš„equalsæ–¹æ³•æˆ–è€…å†™å¾ªç¯åˆ¤æ–­ï¼ˆæ¯”è¾ƒéº»çƒ¦ï¼‰
+//		System.out.println("è¯¾ç¨‹åˆ—è¡¨ä¸­æ˜¯å¦å«æœ‰ï¼š" + cr.name + "ï¼Œ" + this.courseList.contains(cr));
+//		é‡å†™ä¹‹åçš„
+		System.out.println("è¯¾ç¨‹åˆ—è¡¨ä¸­æ˜¯å¦å«æœ‰ï¼š" + cr.name + "ï¼Œ" + this.courseList.contains(cr));
 	}
 }

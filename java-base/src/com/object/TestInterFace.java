@@ -3,7 +3,7 @@ package com.object;
 
 /**
  * @author chenjun
- * 2020Äê6ÔÂ18ÈÕ ÏÂÎç3:09:23
+ * 2020å¹´6æœˆ18æ—¥ ä¸‹åˆ3:09:23
  */
 public class TestInterFace {
 
@@ -38,7 +38,7 @@ class Who implements Man, GirlFriend {
 
     @Override
     public void run() {
-        System.out.println(this.name + "ÔÚÔË¶¯£¡");
+        System.out.println(this.name + "åœ¨è¿åŠ¨ï¼");
     }
 
     @Override
@@ -48,7 +48,7 @@ class Who implements Man, GirlFriend {
 
     @Override
     public void say() {
-        System.out.println(this.name + "ÓĞ" + this.count + "¸öÅ®ÅóÓÑ£¡");
+        System.out.println(this.name + "æœ‰" + this.count + "ä¸ªå¥³æœ‹å‹ï¼");
 
     }
 

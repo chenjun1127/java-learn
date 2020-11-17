@@ -2,7 +2,7 @@ package com.object;
 
 /**
  * @author chenjun
- * 2020Äê6ÔÂ18ÈÕ ÏÂÎç3:05:42
+ * 2020å¹´6æœˆ18æ—¥ ä¸‹åˆ3:05:42
  */
 public class TestObject {
 	public static void main(String[] args) {

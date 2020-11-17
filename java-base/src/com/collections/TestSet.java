@@ -8,10 +8,10 @@ public class TestSet {
 		is.addCourse();
 		is.printCourse();
 		Student st = new Student("1", "jack");
-		System.out.println("»¶Ó­Äã£¬" + st.name + "£¬ÇëÑ¡¿Î£¡");
+		System.out.println("æ¬¢è¿ä½ ï¼Œ" + st.name + "ï¼Œè¯·é€‰è¯¾ï¼");
 		Scanner input = new Scanner(System.in);
 		for (int i = 0; i < 3; i++) {
-			System.out.println("ÇëÊäÈë¿Î³ÌID");
+			System.out.println("è¯·è¾“å…¥è¯¾ç¨‹ID");
 			String courseId = input.next();
 			for (Course cr : is.courseList) {
 				if (courseId.equals(cr.id)) {
@@ -20,9 +20,9 @@ public class TestSet {
 			}
 		}
 		for (Course cr : st.courses) {
-			System.out.println("Ñ¡ÔñÁË¿Î³Ì£º" + cr.id + "£º" + cr.name);
+			System.out.println("é€‰æ‹©äº†è¯¾ç¨‹ï¼š" + cr.id + "ï¼š" + cr.name);
 		}
-		System.out.println("¹²Ñ¡ÔñÁË" + st.courses.size() + "¿Î³Ì");
+		System.out.println("å…±é€‰æ‹©äº†" + st.courses.size() + "è¯¾ç¨‹");
 		is.testContains();
 	}
 }

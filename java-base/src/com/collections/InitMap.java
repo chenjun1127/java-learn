@@ -7,78 +7,79 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class InitMap {
-	public Map<String, Student> students;
+    public Map<String, Student> students;
 
-	public InitMap() {
-		this.students = new HashMap<String, Student>();
-	}
+    public InitMap() {
+        this.students = new HashMap<String, Student>();
+    }
 
-	/**	
-	 * 	Ìí¼Ó£¨ĞŞ¸Ä£©
-	 */
-	
-	public void putItems() {
-		Scanner input = new Scanner(System.in);
-		int i = 0;
-		while (i < 3) {
-			System.out.println("ÇëÊäÈëÑ§ÉúID£º");
-			String ID = input.next();
-			Student st = this.students.get(ID);
-			if (st == null) {
-				System.out.println("ÇëÊäÈëÑ§ÉúĞÕÃû£º");
-				String name = input.next();
-				Student nst = new Student(ID, name);
-				this.students.put(ID, nst);
-				System.out.println("³É¹¦Ìí¼Ó£º" + this.students.get(ID).name);
-				i++;
-			} else {
-				System.out.println("¸ÃÑ§ÉúIDÒÑ¾­±»Õ¼ÓÃ");
-				continue;
-			}
-		}
-	}
+    /**
+     * æ·»åŠ ï¼ˆä¿®æ”¹ï¼‰
+     */
 
-	/**
-	 * 	Í¨¹ıkeyÀ´±éÀúmap
-	 */
-	public void printByKey() {
-		Set<String> keySet = this.students.keySet();
-		for (String id : keySet) {
-			Student st = this.students.get(id);
-			if (st != null) {
-				System.out.println("Ñ§Éú£º" + st.name);
-			}
-		}
-	}
-	
-	/**
-	 * 	É¾³ı
-	 */
-	
-	public void delItems() {
-		Scanner input = new Scanner(System.in);
-		while (true) {
-			System.out.println("ÇëÊäÈëÒªÉ¾³ıµÄÑ§ID£º");
-			String ID = input.next();
-			Student st = this.students.get(ID);
-			if (ID == null) {
-				System.out.println("¸ÃÑ§ÉúID²»´æÔÚ£¬ÇëÖØĞÂÊäÈë");
-				continue;
-			}
-			this.students.remove(ID);
-			System.out.println("É¾³ı³É¹¦£º" + st.name);
-			break;
-		}
-	}
-	/**
-	 * 	Í¨¹ıentrySet·½·¨À´±éÀúMap
-	 * 	entrySet·µ»Ø¼üÖµ¶Ô¼¯ºÏ
-	 */
-	public void printByEntry() {
-		Set<Entry<String, Student>> entrySet = this.students.entrySet();
-		for (Entry<String, Student> entry : entrySet) {
-			System.out.println("È¡µÃ¼üÎª£º" + entry.getKey());
-			System.out.println("¶ÔÓ¦ÖµÎª£º" + entry.getValue().name);
-		}
-	}
+    public void putItems() {
+        Scanner input = new Scanner(System.in);
+        int i = 0;
+        while (i < 3) {
+            System.out.println("è¯·è¾“å…¥å­¦ç”ŸIDï¼š");
+            String ID = input.next();
+            Student st = this.students.get(ID);
+            if (st == null) {
+                System.out.println("è¯·è¾“å…¥å­¦ç”Ÿå§“åï¼š");
+                String name = input.next();
+                Student nst = new Student(ID, name);
+                this.students.put(ID, nst);
+                System.out.println("æˆåŠŸæ·»åŠ ï¼š" + this.students.get(ID).name);
+                i++;
+            } else {
+                System.out.println("è¯¥å­¦ç”ŸIDå·²ç»è¢«å ç”¨");
+                continue;
+            }
+        }
+    }
+
+    /**
+     * é€šè¿‡keyæ¥éå†map
+     */
+    public void printByKey() {
+        Set<String> keySet = this.students.keySet();
+        for (String id : keySet) {
+            Student st = this.students.get(id);
+            if (st != null) {
+                System.out.println("å­¦ç”Ÿï¼š" + st.name);
+            }
+        }
+    }
+
+    /**
+     * åˆ é™¤
+     */
+
+    public void delItems() {
+        Scanner input = new Scanner(System.in);
+        while (true) {
+            System.out.println("è¯·è¾“å…¥è¦åˆ é™¤çš„å­¦IDï¼š");
+            String ID = input.next();
+            Student st = this.students.get(ID);
+            if (ID == null) {
+                System.out.println("è¯¥å­¦ç”ŸIDä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥");
+                continue;
+            }
+            this.students.remove(ID);
+            System.out.println("åˆ é™¤æˆåŠŸï¼š" + st.name);
+            break;
+        }
+    }
+
+    /**
+     * é€šè¿‡entrySetæ–¹æ³•æ¥éå†Map
+     * entrySetè¿”å›é”®å€¼å¯¹é›†åˆ
+     */
+    public void printByEntry() {
+        Set<Entry<String, Student>> entrySet = this.students.entrySet();
+        for (Entry<String, Student> entry : entrySet) {
+            System.out.println("å–å¾—é”®ä¸ºï¼š" + entry.getKey());
+            System.out.println("å¯¹åº”å€¼ä¸ºï¼š" + entry.getValue().name);
+        }
+    }
 }

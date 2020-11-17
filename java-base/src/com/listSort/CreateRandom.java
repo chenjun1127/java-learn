@@ -6,67 +6,65 @@ import java.util.List;
 import java.util.Random;
 
 public class CreateRandom {
-	public List<Integer> integerList;
-	public List<String> stringList;
+    public List<Integer> integerList;
+    public List<String> stringList;
 
-	public CreateRandom() {
-		this.integerList = new ArrayList<Integer>();
-		this.stringList = new ArrayList<String>();
-	}
+    public CreateRandom() {
+        this.integerList = new ArrayList<Integer>();
+        this.stringList = new ArrayList<String>();
+    }
 
-	public void sort() {
-		Collections.sort(this.stringList);
-	}
+    public void sort() {
+        Collections.sort(this.stringList);
+    }
 
-	public <T extends Comparable<? super T>> void mainSort(List<T> list) {
-		Collections.sort(list);
-	}
+    public <T extends Comparable<? super T>> void mainSort(List<T> list) {
+        Collections.sort(list);
+    }
 
-	public void createRandomIntList() {
-//		Éú³ÉÎ¨Ò»²»ÖØ¸´Ëæ»úÕûÊı
-		Random random = new Random();
-		int k;
-		for (int i = 0; i < 10; i++) {
-			do {
-				k = random.nextInt(100);
-			} while (this.integerList.contains(k));
-			this.integerList.add(k);
-		}
-	}
+    public void createRandomIntList() {
+//		ç”Ÿæˆå”¯ä¸€ä¸é‡å¤éšæœºæ•´æ•°
+        Random random = new Random();
+        int k;
+        for (int i = 0; i < 10; i++) {
+            do {
+                k = random.nextInt(100);
+            } while (this.integerList.contains(k));
+            this.integerList.add(k);
+        }
+    }
 
-	public void createRandomStringList() {
-		for (int i = 0; i < 10; i++) {
-			this.stringList.add(this.getRandomStr(6));
-		}
-	}
+    public void createRandomStringList() {
+        for (int i = 0; i < 10; i++) {
+            this.stringList.add(this.getRandomStr(6));
+        }
+    }
 
-	/**
-	 * Éú³ÉËæ»ú×Ö·û´®
-	 * 
-	 * @return
-	 */
-	public String getRandomStr(int length) {
-		Random random = new Random();
-		String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < length; i++) {
-			int number = random.nextInt(str.length());
-			char charAt = str.charAt(number);
-			sb.append(charAt);
-		}
-		return sb.toString();
-	}
+    /**
+     * ç”Ÿæˆéšæœºå­—ç¬¦ä¸²
+     */
+    public String getRandomStr(int length) {
+        Random random = new Random();
+        String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(str.length());
+            char charAt = str.charAt(number);
+            sb.append(charAt);
+        }
+        return sb.toString();
+    }
 
-	public <T> void printSortBefore(List<T> T) {
-		System.out.println("=======ÅÅĞòÇ°==========");
-		System.out.println(T);
+    public <T> void printSortBefore(List<T> T) {
+        System.out.println("=======æ’åºå‰==========");
+        System.out.println(T);
 //		for (String s : this.stringList) {
 //			System.out.println(s);
 //		}
-	}
-	
-	public <T> void printSortAfter(List<T> T) {
-		System.out.println("=======ÅÅĞòºó==========");
-		System.out.println(T);
-	}
+    }
+
+    public <T> void printSortAfter(List<T> T) {
+        System.out.println("=======æ’åºå==========");
+        System.out.println(T);
+    }
 }

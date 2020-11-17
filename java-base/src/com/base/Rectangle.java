@@ -1,7 +1,7 @@
 package com.base;
 
 /**
- * @author chenjun 2020Äê6ÔÂ12ÈÕ ÉÏÎç9:58:58 ¼ÆËã¾ØĞÎÖÜ³¤Ãæ»ı
+ * @author chenjun 2020å¹´6æœˆ12æ—¥ ä¸Šåˆ9:58:58 è®¡ç®—çŸ©å½¢å‘¨é•¿é¢ç§¯
  */
 public class Rectangle extends Shape {
 	public int x;
@@ -17,13 +17,13 @@ public class Rectangle extends Shape {
 	@Override
 	public void calcPerimeter() {
 		this.C = (this.x + this.y) * 2;
-		System.out.println("¾ØĞÎµÄÖÜ³¤Îª£º" + this.C);
+		System.out.println("çŸ©å½¢çš„å‘¨é•¿ä¸ºï¼š" + this.C);
 	}
 
 	@Override
 	public void calcArea() {
 		this.A = this.x * this.y;
-		System.out.println("¾ØĞÎµÄÃæ»ıÎª£º" + this.A);
+		System.out.println("çŸ©å½¢çš„é¢ç§¯ä¸ºï¼š" + this.A);
 
 	}
 

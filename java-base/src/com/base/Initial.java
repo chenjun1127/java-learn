@@ -1,6 +1,6 @@
 package com.base;
 
-public class Initail {
+public class Initial {
 	public static void main(String[] args) {
 		Triangle T = new Triangle(5, 10, 8, 10);
 		T.calcArea();

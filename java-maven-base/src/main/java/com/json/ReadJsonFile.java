@@ -9,21 +9,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * @author chenjun 
- * 2020Äê6ÔÂ19ÈÕ ÉÏÎç9:57:48 ¶ÁÈ¡ÎÄ¼ş
+ * @author chenjun
+ * 2020å¹´6æœˆ19æ—¥ ä¸Šåˆ9:57:48 è¯»å–æ–‡ä»¶
  */
 public class ReadJsonFile {
 
 	public static void main(String[] args) throws IOException, JSONException {
-		File file = new File(ReadJsonFile.class.getResource("person.json").getFile());
+		File file = new File(ReadJsonFile.class.getResource("/person.json").getFile());
 		String content = FileUtils.readFileToString(file);
 		JSONObject jsonObject = new JSONObject(content);
 		System.out.println(jsonObject);
-		System.out.println("ĞÕÃûÊÇ£º" + jsonObject.getString("name"));
-		JSONArray jsonArr = jsonObject.getJSONArray("hobbies");		
+		System.out.println("å§“åæ˜¯ï¼š" + jsonObject.getString("name"));
+		JSONArray jsonArr = jsonObject.getJSONArray("hobbies");
 		for (int i = 0; i < jsonArr.length(); i++) {
 			String s = (String) jsonArr.get(i);
-			System.out.println("°®ºÃÊÇ£º" + s);
+			System.out.println("çˆ±å¥½æ˜¯ï¼š" + s);
 		}
 	}
 }

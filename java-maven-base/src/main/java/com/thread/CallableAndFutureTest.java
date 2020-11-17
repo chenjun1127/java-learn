@@ -6,7 +6,7 @@ import java.util.concurrent.FutureTask;
 
 /**
  * @author chenjun
- * 2020Äê6ÔÂ22ÈÕ ÉÏÎç10:52:56 Í¨¹ı Callable ºÍ Future ´´½¨Ïß³Ì
+ * 2020å¹´6æœˆ22æ—¥ ä¸Šåˆ10:52:56 é€šè¿‡ Callable å’Œ Future åˆ›å»ºçº¿ç¨‹
  */
 public class CallableAndFutureTest implements Callable<Integer> {
 	public static void main(String[] args) {
@@ -14,17 +14,15 @@ public class CallableAndFutureTest implements Callable<Integer> {
 		FutureTask<Integer> ft = new FutureTask<Integer>(caf);
 		for (int i = 0; i < 100; i++) {
 			{
-				System.out.println(Thread.currentThread().getName() + " µÄÑ­»·±äÁ¿iµÄÖµ" + i);
+				System.out.println(Thread.currentThread().getName() + " çš„å¾ªç¯å˜é‡içš„å€¼" + i);
 				if (i == 20) {
-					new Thread(ft, "ÓĞ·µ»ØÖµµÄÏß³Ì").start();
+					new Thread(ft, "æœ‰è¿”å›å€¼çš„çº¿ç¨‹").start();
 				}
 			}
 		}
 		try {
-			System.out.println("×ÓÏß³ÌµÄ·µ»ØÖµ£º" + ft.get());
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
+			System.out.println("å­çº¿ç¨‹çš„è¿”å›å€¼ï¼š" + ft.get());
+		} catch (InterruptedException | ExecutionException e) {
 			e.printStackTrace();
 		}
 	}
@@ -37,5 +35,4 @@ public class CallableAndFutureTest implements Callable<Integer> {
 		}
 		return i;
 	}
-
 }

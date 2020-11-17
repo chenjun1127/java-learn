@@ -10,11 +10,11 @@ public class ThreadTest {
 }
 
 /**
- * @author chenjun 2020Äê6ÔÂ22ÈÕ ÉÏÎç10:38:17 Í¨¹ý¼Ì³Ð Thread Àà±¾ÉíÀ´´´½¨Ïß³Ì£»
+ * @author chenjun 2020å¹´6æœˆ22æ—¥ ä¸Šåˆ10:38:17 é€šè¿‡ç»§æ‰¿ Thread ç±»æœ¬èº«æ¥åˆ›å»ºçº¿ç¨‹ï¼›
  */
 class ThreadInit extends Thread {
 	private Thread t;
-	private String threadName;
+	private final String threadName;
 
 	ThreadInit(String name) {
 		this.threadName = name;
@@ -22,7 +22,7 @@ class ThreadInit extends Thread {
 
 	public void run() {
 		for (int i = 4; i > 0; i--) {
-			System.out.println("Ïß³Ì£º" + threadName + "," + i);
+			System.out.println("çº¿ç¨‹ï¼š" + threadName + "," + i);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {

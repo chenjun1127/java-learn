@@ -1,14 +1,5 @@
 package com.mongo;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-
-import org.bson.Document;
-import org.bson.conversions.Bson;
-import org.json.JSONObject;
-
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -16,6 +7,12 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.FindOneAndUpdateOptions;
+import org.bson.Document;
+import org.bson.conversions.Bson;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
 
 public class MongoTest {
 	public static void main(String[] args) {
@@ -29,7 +26,7 @@ public class MongoTest {
 
 /**
  * @author chenjun 
- * 2020Äê6ÔÂ22ÈÕ ÏÂÎç2:19:20
+ * 2020å¹´6æœˆ22æ—¥ ä¸‹åˆ2:19:20
  */
 class MongoClientInit {
 	public String url;
@@ -47,7 +44,7 @@ class MongoClientInit {
 	}
 
 	/**
-	 * 	³õÊ¼»¯Á¬½ÓÊı¾İ¿â
+	 * 	åˆå§‹åŒ–è¿æ¥æ•°æ®åº“
 	 */
 	public void init() {
 		try {
@@ -60,7 +57,7 @@ class MongoClientInit {
 	}
 
 	/**
-	 * 	²éÑ¯¼¯ºÏÖĞËùÓĞÎÄµµ
+	 * 	æŸ¥è¯¢é›†åˆä¸­æ‰€æœ‰æ–‡æ¡£
 	 */
 	public void queryAllData() {
 		MongoCollection<Document> collection = this.mongoDatabase.getCollection(this.collections);
@@ -73,25 +70,25 @@ class MongoClientInit {
 	}
 
 	/**
-	 * 1¡¢´´½¨ÎÄµµ org.bson.Document ²ÎÊıÎªkey-valueµÄ¸ñÊ½£»
-	 * 2¡¢´´½¨ÎÄµµ¼¯ºÏList<Document>£»
-	 * 3¡¢½«ÎÄµµ¼¯ºÏ²åÈëÊı¾İ¿â¼¯ºÏÖĞ mongoCollection.insertMany(List<Document>)£»
-	 * 4¡¢²åÈëµ¥¸öÎÄµµ¿ÉÒÔÓÃmongoCollection.insertOne(Document)£»
+	 * 1ã€åˆ›å»ºæ–‡æ¡£ org.bson.Document å‚æ•°ä¸ºkey-valueçš„æ ¼å¼ï¼›
+	 * 2ã€åˆ›å»ºæ–‡æ¡£é›†åˆList<Document>ï¼›
+	 * 3ã€å°†æ–‡æ¡£é›†åˆæ’å…¥æ•°æ®åº“é›†åˆä¸­ mongoCollection.insertMany(List<Document>)ï¼›
+	 * 4ã€æ’å…¥å•ä¸ªæ–‡æ¡£å¯ä»¥ç”¨mongoCollection.insertOne(Document)ï¼›
 	 */
 	public void insertDocument() {
 		Document doc = new Document("name", "jack").append("sex", 1).append("age", 30).append("hobbies",
-				Arrays.toString(new String[] { "ÓÎÏ·", "ÌıÒôÀÖ" }));
+				Arrays.toString(new String[] { "æ¸¸æˆ", "å¬éŸ³ä¹" }));
 //		ArrayList<Document> documents = new ArrayList<Document>();
 //		documents.add(doc);
 		MongoCollection<Document> collection = this.mongoDatabase.getCollection(this.collections);
 		FindOneAndUpdateOptions updateOptions = new FindOneAndUpdateOptions();
 		updateOptions.upsert(true);
-		// findOneAndUpdate ²éÑ¯²»µ½Êı¾İÔÙ²åÈëÊı¾İ£¬±ÜÃâinset²åÈëÖØ¸´Êı¾İ
+		// findOneAndUpdate æŸ¥è¯¢ä¸åˆ°æ•°æ®å†æ’å…¥æ•°æ®ï¼Œé¿å…insetæ’å…¥é‡å¤æ•°æ®
 		collection.findOneAndUpdate(Filters.eq("name", "jack"), new Document("$set", doc), updateOptions);
 	}
 
 	/**
-	 * 	¸üĞÂÎÄµµ£¬updateMany ¸üĞÂ¶à¸ö£¬updateOne ¸üĞÂÒ»¸ö£»
+	 * 	æ›´æ–°æ–‡æ¡£ï¼ŒupdateMany æ›´æ–°å¤šä¸ªï¼ŒupdateOne æ›´æ–°ä¸€ä¸ªï¼›
 	 */
 	public void updateDocument() {
 		MongoCollection<Document> collection = this.mongoDatabase.getCollection(this.collections);
@@ -105,11 +102,11 @@ class MongoClientInit {
 	}
 
 	/**
-	 *	 É¾³ıÎÄµµ£¬deleteOne É¾³ıÒ»¸ö£¬deleteMany É¾³ı¶à¸ö
+	 *	 åˆ é™¤æ–‡æ¡£ï¼ŒdeleteOne åˆ é™¤ä¸€ä¸ªï¼ŒdeleteMany åˆ é™¤å¤šä¸ª
 	 */
 	public void deleteDocument() {
 		MongoCollection<Document> collection = this.mongoDatabase.getCollection(this.collections);
-		// É¾³ı·ûºÏÌõ¼şµÄµÚÒ»¸öÎÄµµ
+		// åˆ é™¤ç¬¦åˆæ¡ä»¶çš„ç¬¬ä¸€ä¸ªæ–‡æ¡£
 		collection.deleteOne(Filters.eq("name", "jack"));
 	}
 

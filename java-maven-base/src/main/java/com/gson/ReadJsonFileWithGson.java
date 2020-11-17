@@ -11,16 +11,16 @@ import com.json.ReadJsonFile;
 
 public class ReadJsonFileWithGson {
 
-	public static void main(String[] args) throws IOException {
-		File file = new File(ReadJsonFile.class.getResource("girl.json").getFile());
-		String content = FileUtils.readFileToString(file);
-		Gson gson = new Gson();
-		Girl girl = gson.fromJson(content, Girl.class);
-		System.out.println("姓名是：" + girl.getName());
-		for (int i = 0; i < girl.hobbies.length; i++) {
-			System.out.println("爱好是：" + girl.hobbies[i]);
-		}
-		System.out.println(girl.getBirthday().toString());
-	}
+    public static void main(String[] args) throws IOException {
+        File file = new File(ReadJsonFile.class.getResource("/person.json").getFile());
+        String content = FileUtils.readFileToString(file);
+        Gson gson = new Gson();
+        Girl girl = gson.fromJson(content, Girl.class);
+        System.out.println("濮撳悕鏄細" + girl.getName());
+        for (int i = 0; i < girl.hobbies.length; i++) {
+            System.out.println("鐖卞ソ鏄細" + girl.hobbies[i]);
+        }
+        System.out.println(girl.getBirthday());
+    }
 
 }

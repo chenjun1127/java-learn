@@ -2,40 +2,38 @@ package com.sql;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sql.Person;
 
 /**
  * @author chenjun
- * 2020Äê6ÔÂ19ÈÕ ÏÂÎç6:40:45
- * mysql²âÊÔ²¢·µ»Øjson
+ * 2020å¹´6æœˆ19æ—¥ ä¸‹åˆ6:40:45
+ * mysqlæµ‹è¯•å¹¶è¿”å›json
  */
 public class SqlTest {
-	// MySQL 8.0 ÒÔÉÏ°æ±¾ - JDBC Çı¶¯Ãû¼°Êı¾İ¿â URL
+	// MySQL 8.0 ä»¥ä¸Šç‰ˆæœ¬ - JDBC é©±åŠ¨ååŠæ•°æ®åº“ URL
 	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=Asia/Shanghai";
 
-	// Êı¾İ¿âµÄÓÃ»§ÃûÓëÃÜÂë£¬ĞèÒª¸ù¾İ×Ô¼ºµÄÉèÖÃ
+	// æ•°æ®åº“çš„ç”¨æˆ·åä¸å¯†ç ï¼Œéœ€è¦æ ¹æ®è‡ªå·±çš„è®¾ç½®
 	static final String USER = "root";
 	static final String PASS = "123456";
-	public static ArrayList<Person> list = new ArrayList<Person>();
+	public static java.util.ArrayList<Person> list = new java.util.ArrayList<Person>();
 
 	public static void main(String[] args) {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
 			Class.forName(JDBC_DRIVER);
-			// ´ò¿ªÁ´½Ó
-			System.out.println("Á¬½ÓÊı¾İ¿â...");
+			// æ‰“å¼€é“¾æ¥
+			System.out.println("è¿æ¥æ•°æ®åº“...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			// Ö´ĞĞ²éÑ¯
-			System.out.println(" ÊµÀı»¯Statement¶ÔÏó...");
+			// æ‰§è¡ŒæŸ¥è¯¢
+			System.out.println(" å®ä¾‹åŒ–Statementå¯¹è±¡...");
 			stmt = conn.createStatement();
 			String sql = "SELECT * FROM user";
 			ResultSet rs = stmt.executeQuery(sql);
@@ -51,18 +49,18 @@ public class SqlTest {
 				String birthday = rs.getString("birthday");
 				String work = rs.getString("work");
 				String country = rs.getString("country");
-				// Êä³öÊı¾İ
+				// è¾“å‡ºæ•°æ®
 				System.out.print("ID: " + id);
-				System.out.print(", ĞÕÃû: " + name);
-				System.out.print(", ÄêÁä: " + age);
-				System.out.print(", ¸öÈËÖ÷Ò³: " + url);
-				System.out.print(", °®ºÃ: " + Arrays.toString(hobbies));
-				System.out.print(", Éí¸ß: " + height);
-				System.out.print(", ÌåÖØ: " + weight);
-				System.out.print(", ´´½¨Ê±¼ä: " + createTime);
-				System.out.print(", ³öÉúÄêÔÂ: " + birthday);
-				System.out.print(", Ö°Òµ: " + work);
-				System.out.print(", ¹ú¼®: " + country);
+				System.out.print(", å§“å: " + name);
+				System.out.print(", å¹´é¾„: " + age);
+				System.out.print(", ä¸ªäººä¸»é¡µ: " + url);
+				System.out.print(", çˆ±å¥½: " + Arrays.toString(hobbies));
+				System.out.print(", èº«é«˜: " + height);
+				System.out.print(", ä½“é‡: " + weight);
+				System.out.print(", åˆ›å»ºæ—¶é—´: " + createTime);
+				System.out.print(", å‡ºç”Ÿå¹´æœˆ: " + birthday);
+				System.out.print(", èŒä¸š: " + work);
+				System.out.print(", å›½ç±: " + country);
 				System.out.print("\n");
 				Person p = new Person();
 				p.setName(name);
@@ -78,14 +76,12 @@ public class SqlTest {
 				p.setFeatures(features);
 				list.add(p);
 			}
-			// Éú³Éjson
+			// ç”Ÿæˆjson
 			createJson(list);
-			// Íê³Éºó¹Ø±Õ
+			// å®Œæˆåå…³é—­
 			rs.close();
 			stmt.close();
 			conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -105,7 +101,7 @@ public class SqlTest {
 		System.out.println("Goodbye!");
 	}
 
-	public static <ArrrayList> void createJson(ArrrayList list) {
+	public static <ArrayList> void createJson(ArrayList list) {
 		GsonBuilder gsonBuilder = new GsonBuilder();
 		gsonBuilder.setPrettyPrinting();
 		Gson gson = gsonBuilder.create();

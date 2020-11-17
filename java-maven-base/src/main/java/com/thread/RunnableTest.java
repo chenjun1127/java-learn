@@ -2,7 +2,7 @@ package com.thread;
 
 /**
  * @author chenjun
- * 2020Äê6ÔÂ22ÈÕ ÉÏÎç10:36:33 Í¨¹ýÊµÏÖ Runnable ½Ó¿ÚÀ´´´½¨Ïß³Ì
+ * 2020å¹´6æœˆ22æ—¥ ä¸Šåˆ10:36:33 é€šè¿‡å®žçŽ° Runnable æŽ¥å£æ¥åˆ›å»ºçº¿ç¨‹
  */
 public class RunnableTest {
 	public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class RunnableTest {
 
 class RunnableInit implements Runnable {
 	private Thread t;
-	private String threadName;
+	private final String threadName;
 
 	RunnableInit(String name) {
 		this.threadName = name;
@@ -24,7 +24,7 @@ class RunnableInit implements Runnable {
 
 	public void run() {
 		for (int i = 4; i > 0; i--) {
-			System.out.println("Ïß³Ì£º" + threadName + "," + i);
+			System.out.println("çº¿ç¨‹ï¼š" + threadName + "," + i);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {

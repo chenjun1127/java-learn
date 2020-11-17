@@ -13,3 +13,7 @@
 /*/.gitignore
 /*/*/.mvn
 /*/*/target
+.idea
+.settings
+.iml
+.classpath

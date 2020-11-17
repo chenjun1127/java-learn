@@ -42,6 +42,7 @@ public class FileController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String fileName = file.getOriginalFilename();
 		// 文件后缀名
+		assert fileName != null;
 		String suffixName = fileName.substring(fileName.lastIndexOf("."));
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		String time = format.format(new Date().getTime());
@@ -50,14 +51,11 @@ public class FileController {
 		File dest = new File(filePath + fileName);
 		try {
 			file.transferTo(dest);
-			map.clear();
 			map.put("filePath", filePath);
 			map.put("fileName", fileName);
 			map.put("name", name);
 			return new JsonData(0, map, "上传成功");
-		} catch (IllegalStateException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (IllegalStateException | IOException e) {
 			e.printStackTrace();
 		}
 		return new JsonData(-1, null, "上传失败");

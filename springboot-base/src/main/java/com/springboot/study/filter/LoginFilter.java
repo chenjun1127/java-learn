@@ -19,17 +19,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebFilter(urlPatterns = "/api/testRequest", filterName = "loginFilter")
 public class LoginFilter implements Filter {
 
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		HttpServletRequest req = (HttpServletRequest) request;
-		HttpServletResponse res = (HttpServletResponse) response;
-		String id = req.getParameter("id");
-		if (id != null && id.equals("1") && !id.isEmpty()) {
-			chain.doFilter(request, response);
-		} else {
-			res.sendRedirect("/login.html");
-		}
-	}
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+        String id = req.getParameter("id");
+        if (id != null && id.equals("1")) {
+            chain.doFilter(request, response);
+        } else {
+            res.sendRedirect("/login.html");
+        }
+    }
 
 }

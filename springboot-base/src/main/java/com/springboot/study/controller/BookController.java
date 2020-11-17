@@ -36,19 +36,11 @@ public class BookController {
 
 	@GetMapping("/get/{id}")
 	public JsonData getBookById(@PathVariable String id) {
-		Object data = bookService.getBookById(id);
-		if (data.equals(null)) {
-			return JsonData.buildError("数据不存在");
-		}
 		return JsonData.buildSuccess(bookService.getBookById(id), "查询成功");
 	}
 
 	@PutMapping("/update/{id}")
 	public JsonData updateBookById(@RequestBody Book book, @PathVariable String id) {
-		Object data = bookService.updateBookById(book, id);
-		if (data.equals(null)) {
-			return JsonData.buildError("数据不存在");
-		}
 		return JsonData.buildSuccess(bookService.updateBookById(book, id), "查询成功");
 	}
 
@@ -59,7 +51,7 @@ public class BookController {
 	}
 
 	@GetMapping("/search")
-	public JsonData searchBook(String title, @RequestParam(defaultValue = "1") int index, @RequestParam(defaultValue = "5") int size) {
+	public JsonData searchBook(String title, @RequestParam(defaultValue = "1") Integer index, @RequestParam(defaultValue = "5") Integer size) {
 		Map<String, Object> map = bookService.search(title, index, size);
 		return JsonData.buildSuccess(map, "success");
 	}

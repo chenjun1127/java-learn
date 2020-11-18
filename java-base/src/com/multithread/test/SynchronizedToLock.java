@@ -18,6 +18,8 @@ public class SynchronizedToLock {
     public void method2() {
         lock.lock();
         try {
+
+
             System.out.println("我是lock形式的锁");
         } finally {
             lock.unlock();

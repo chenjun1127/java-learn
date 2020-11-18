@@ -10,6 +10,7 @@ import java.util.concurrent.FutureTask;
  * @Date: 2020/11/17 17:14
  */
 public class CallableTest implements Callable<String> {
+
     @Override
     public String call() throws Exception {
         try {

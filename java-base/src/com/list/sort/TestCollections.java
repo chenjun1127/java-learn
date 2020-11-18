@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @Description:
+ * @Author: chenjun
+ * @Date: 2020/6/18 9:51
+ */
 public class TestCollections {
     public List<Car> carList;
 
@@ -13,23 +18,23 @@ public class TestCollections {
     }
 
     public static void main(String[] args) {
-        Car Benz = new Car("1", "奔驰");
-        Series[] BenzSeries = {new Series("1", "GLA", 22.98F), new Series("2", "GLC", 45.38F),
+        Car benz = new Car("1", "奔驰");
+        Series[] benzSeries = {new Series("1", "GLA", 22.98F), new Series("2", "GLC", 45.38F),
                 new Series("3", "GLB", 33.28F)};
-        Benz.series.addAll(Arrays.asList(BenzSeries));
-        Car BMW = new Car("0", "宝马");
-        Series[] BMWSeries = {new Series("1", "X1", 32.98F), new Series("2", "X3", 42.38F),
+        benz.series.addAll(Arrays.asList(benzSeries));
+        Car bmw = new Car("0", "宝马");
+        Series[] bmwSeries = {new Series("1", "X1", 32.98F), new Series("2", "X3", 42.38F),
                 new Series("3", "X6", 78.98F)};
-        BMW.series.addAll(Arrays.asList(BMWSeries));
-        Car Audi = new Car("003", "奥迪");
-        Series[] AudiSeries = {new Series("1", "A4L", 32.38F), new Series("2", "A6L", 39.08F),
+        bmw.series.addAll(Arrays.asList(bmwSeries));
+        Car audi = new Car("003", "奥迪");
+        Series[] audiSeries = {new Series("1", "A4L", 32.38F), new Series("2", "A6L", 39.08F),
                 new Series("3", "A8L", 98.00F)};
-        Audi.series.addAll(Arrays.asList(AudiSeries));
+        audi.series.addAll(Arrays.asList(audiSeries));
 
         TestCollections tc = new TestCollections();
-        tc.carList.add(Benz);
-        tc.carList.add(BMW);
-        tc.carList.add(Audi);
+        tc.carList.add(benz);
+        tc.carList.add(bmw);
+        tc.carList.add(audi);
         tc.sortById();
         tc.sortByName();
     }
@@ -46,7 +51,7 @@ public class TestCollections {
     }
 
     /*
-     * 	根据name来排序
+     * 根据name来排序
      */
     public void sortByName() {
         Collections.sort(this.carList, new CarComparator());

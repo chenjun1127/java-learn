@@ -23,7 +23,7 @@ public class SynchronizedObject implements Runnable {
         method();
     }
 
-    public synchronized void method() {
+    private synchronized void method() {
         System.out.println("我的对象锁的方法修饰符形式，我叫" + Thread.currentThread().getName());
         try {
             Thread.sleep(3000);

@@ -20,6 +20,9 @@ public class DisappearRequest implements Runnable {
         System.out.println(count);
     }
 
+    /*
+     * 如何解决？加synchronized
+     */
     @Override
     public void run() {
         for (int i = 0; i < 100000; i++) {

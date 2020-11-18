@@ -1,4 +1,4 @@
-package com.collections;
+package com.collection;
 
 public class TestList {
 	public static void main(String[] args) {

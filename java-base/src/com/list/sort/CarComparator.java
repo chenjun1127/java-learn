@@ -1,4 +1,4 @@
-package com.listSort;
+package com.list.sort;
 
 import java.util.Comparator;
 

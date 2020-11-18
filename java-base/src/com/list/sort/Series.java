@@ -1,4 +1,4 @@
-package com.listSort;
+package com.list.sort;
 
 public class Series {
 	public String id;

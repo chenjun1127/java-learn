@@ -10,10 +10,9 @@ import java.util.concurrent.*;
  * @Author: chenjun
  * @Date: 2020/11/19 15:57
  */
-public class SynchronizedDate {
+public class SynchronizedDateSimple {
     public static void main(String[] args) {
-
-        new SynchronizedDate().test();
+        new SynchronizedDateSimple().test();
     }
 
     private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

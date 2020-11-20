@@ -45,7 +45,7 @@ public class FileController {
 		assert fileName != null;
 		String suffixName = fileName.substring(fileName.lastIndexOf("."));
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-		String time = format.format(new Date().getTime());
+		String time = format.format(System.currentTimeMillis());
 		// 文件上传后的路径
 		fileName = time + suffixName;
 		File dest = new File(filePath + fileName);

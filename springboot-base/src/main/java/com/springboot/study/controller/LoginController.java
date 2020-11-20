@@ -2,7 +2,6 @@ package com.springboot.study.controller;
 
 import com.springboot.study.task.AsyncLoginTask;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;

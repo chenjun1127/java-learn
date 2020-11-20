@@ -7,6 +7,7 @@ package com.multithread.base;
  */
 public class ThreadTest {
     public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getName() + "，我是主线程");
         new Thread(new ThreadInit()).start();
     }
 

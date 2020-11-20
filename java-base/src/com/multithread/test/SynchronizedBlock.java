@@ -17,7 +17,10 @@ public class SynchronizedBlock implements Runnable {
         }
         System.out.println("finished");
     }
-
+    // 线程安全问题
+    // 核心思想：同一个时刻，只能有一个线程执行，那么这个时候整个程序就会变成单线程执行。加个锁缺点：对程序效率执行非常低。
+    // 如何解决线程安全问题？
+    // synchronized，Lock锁，cas无锁，手写乐观锁
     @Override
     public void run() {
         synchronized (this) {

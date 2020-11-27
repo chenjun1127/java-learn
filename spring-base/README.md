@@ -15,3 +15,12 @@ Spring给我们提供了context:annotation-config 的简化的配置方式，自
 
 注：
 xsi:schemaLocation，它定义了XML Namespace和对应的XSD（Xml Schema Definition）文档的位置的关系。它的值由一个或多个URI引用对组成，两个URI之间以空白符分隔（空格和换行均可）。第一个URI是定义的XML Namespace的值，第二个URI给出Schema文档的位置，Schema处理器将从这个位置读取Schema文档，该文档的targetNamespace必须与第一个URI相匹配。
+
+Spring中到底有几种依赖注入方式？
+##### 一、手动注入
+
+* set方法
+* 构造方法
+##### 二、自动注入
+* xml自动注入（set方法、构造方法）
+* @Autowired注解的自动注入（属性、构造方法、普通方法）

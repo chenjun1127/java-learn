@@ -11,34 +11,34 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd">
 	   
 
-	<bean id="user" class="com.spring.base_learn.entity.User">
+	<bean id="user" class="com.spring.base.learn.entity.User">
 		<property name="name" value="jack"></property>
 		<property name="password" value="123456"></property>
 		<property name="id" value="1"></property>
 	</bean>
-	<bean id="course" class="com.spring.base_learn.entity.Course">
+	<bean id="course" class="com.spring.base.learn.entity.Course">
 		<property name="id" value="1"></property>
 		<property name="title" value="spring5.x学习"></property>
 		<property name="user" ref="user"></property>
 	</bean>
-	<bean id="car" class="com.spring.base_learn.entity.Car">
+	<bean id="car" class="com.spring.base.learn.entity.Car">
 		<property name="id" value="1"></property>
 		<property name="name" value="宝马X5"></property>
 		<property name="color" value="red"></property>
 	</bean>
-	<bean id="student" class="com.spring.base_learn.entity.Student" autowire="constructor">
+	<bean id="student" class="com.spring.base.learn.entity.Student" autowire="constructor">
 		<property name="id" value="1"></property>
 		<property name="name" value="张三"></property>
 	</bean>
-	<bean id="studentInfo" class="com.spring.base_learn.entity.StudentInfo"></bean>
+	<bean id="studentInfo" class="com.spring.base.learn.entity.StudentInfo"></bean>
 	<!-- 使用context命名空间，通过spring扫描指定annotation及其子包下所有的Bean实现类，进行注解解析 -->
-	<context:component-scan base-package="com.spring.base_learn.entity" />
-	<bean id="timeHandler" class="com.spring.base_learn.aop.TimeHandler"></bean>
-	<bean id="userService" class="com.spring.base_learn.service.impl.UserServiceImpl"></bean>
+	<context:component-scan base-package="com.spring.base.learn.entity" />
+	<bean id="timeHandler" class="com.spring.base.learn.aop.TimeHandler"></bean>
+	<bean id="userService" class="com.spring.base.learn.service.impl.UserServiceImpl"></bean>
 	<!-- 配置AOP -->
 	<aop:config>
 		<aop:aspect id="timeAspect" ref="timeHandler">
-			<aop:pointcut id="pt1" expression="execution(* com.spring.base_learn.service.UserService.*(..))"></aop:pointcut>
+			<aop:pointcut id="pt1" expression="execution(* com.spring.base.learn.service.UserService.*(..))"></aop:pointcut>
 			<aop:before method="printBefore" pointcut-ref="pt1"></aop:before>
 			<aop:after method="printAfter" pointcut-ref="pt1"></aop:after>
 		</aop:aspect>

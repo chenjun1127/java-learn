@@ -1,4 +1,4 @@
-package com.spring.base_learn.config;
+package com.spring.base.learn.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @Configuration
 @EnableAspectJAutoProxy // 告诉spirng支持aspect
-@ComponentScan("com.spring.base_learn.service.impl")
+@ComponentScan("com.spring.base.learn.service.impl")
 public class AnnotationApplicationConfig {
 }

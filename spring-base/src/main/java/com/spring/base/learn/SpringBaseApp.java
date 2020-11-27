@@ -1,10 +1,10 @@
-package com.spring.base_learn;
+package com.spring.base.learn;
 
-import com.spring.base_learn.config.AnnotationApplicationConfig;
-import com.spring.base_learn.config.ApplicationConfig;
-import com.spring.base_learn.entity.*;
-import com.spring.base_learn.service.AccountService;
-import com.spring.base_learn.service.UserService;
+import com.spring.base.learn.config.AnnotationApplicationConfig;
+import com.spring.base.learn.config.ApplicationConfig;
+import com.spring.base.learn.entity.*;
+import com.spring.base.learn.service.AccountService;
+import com.spring.base.learn.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -56,7 +56,7 @@ public class SpringBaseApp {
 
     private static void testBeanAnnotationConfig(AnnotationConfigApplicationContext annotationConfigApplicationContext) {
         // @Configuration和@Bean注解
-        annotationConfigApplicationContext.scan("com.spring.base_learn");
+        annotationConfigApplicationContext.scan("com.spring.base.learn");
         annotationConfigApplicationContext.refresh();
         Account account = (Account) annotationConfigApplicationContext.getBean("account");
         account.setName("中国银行");

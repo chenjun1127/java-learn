@@ -1,7 +1,6 @@
-package com.spring.base_learn.service;
+package com.spring.base.learn.service;
 
-import com.spring.base_learn.entity.Account;
-import com.spring.base_learn.entity.User;
+import com.spring.base.learn.entity.Account;
 
 /**
  * @Description:
@@ -10,7 +9,7 @@ import com.spring.base_learn.entity.User;
  */
 public interface AccountService {
 
-    public Account save(Account account);
+    Account save(Account account);
 
 
 }

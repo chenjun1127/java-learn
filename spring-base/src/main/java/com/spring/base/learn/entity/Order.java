@@ -1,4 +1,4 @@
-package com.spring.base_learn.entity;
+package com.spring.base.learn.entity;
 
 import java.util.Date;
 

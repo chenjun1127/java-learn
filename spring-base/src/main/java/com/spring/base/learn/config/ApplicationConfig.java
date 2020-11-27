@@ -1,7 +1,7 @@
-package com.spring.base_learn.config;
+package com.spring.base.learn.config;
 
-import com.spring.base_learn.entity.Order;
-import com.spring.base_learn.entity.Student;
+import com.spring.base.learn.entity.Order;
+import com.spring.base.learn.entity.Student;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

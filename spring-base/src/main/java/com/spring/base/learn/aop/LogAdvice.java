@@ -1,4 +1,4 @@
-package com.spring.base_learn.aop;
+package com.spring.base.learn.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect // 告诉spring，这是一个切面类，里面可以定义切入点和通知；
 public class LogAdvice {
     // 切入表达式（切入哪些方法）
-    @Pointcut("execution(* com.spring.base_learn.service.impl.AccountServiceImpl.*(..))")
+    @Pointcut("execution(* com.spring.base.learn.service.impl.AccountServiceImpl.*(..))")
     public void aspect() {
 
     }

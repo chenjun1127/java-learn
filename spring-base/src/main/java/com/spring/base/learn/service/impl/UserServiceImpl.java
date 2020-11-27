@@ -1,7 +1,7 @@
-package com.spring.base_learn.service.impl;
+package com.spring.base.learn.service.impl;
 
-import com.spring.base_learn.entity.User;
-import com.spring.base_learn.service.UserService;
+import com.spring.base.learn.service.UserService;
+import com.spring.base.learn.entity.User;
 
 /**
  * @Description: TODO

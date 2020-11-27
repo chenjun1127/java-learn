@@ -1,7 +1,7 @@
-package com.spring.base_learn.service.impl;
+package com.spring.base.learn.service.impl;
 
-import com.spring.base_learn.entity.Account;
-import com.spring.base_learn.service.AccountService;
+import com.spring.base.learn.entity.Account;
+import com.spring.base.learn.service.AccountService;
 import org.springframework.stereotype.Service;
 
 /**

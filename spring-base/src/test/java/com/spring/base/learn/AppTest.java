@@ -1,4 +1,4 @@
-package com.spring.base_learn;
+package com.spring.base.learn;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

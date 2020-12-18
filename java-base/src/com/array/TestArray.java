@@ -29,8 +29,8 @@ class Score {
     public void scoreSort() {
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int[] arr : scores) {
-            for (int i = 0; i < arr.length; i++) {
-                list.add(arr[i]);
+            for (int j : arr) {
+                list.add(j);
             }
         }
 //		将arrayList转换为array;

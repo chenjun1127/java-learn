@@ -36,7 +36,7 @@ public class ReflectClass {
         try {
             Class<?> classBook = Class.forName("com.reflect.entities.Book");
             Constructor<?> declaredConstructorBook = classBook.getDeclaredConstructor(String.class, String.class);
-            // declaredConstructorBook类中的成员变量为private,故必须进行此操
+            // declaredConstructorBook类中的成员变量为private,故必须进行此操作
             declaredConstructorBook.setAccessible(true);
             Book book = (Book) declaredConstructorBook.newInstance("深入理解Java虚拟机 第2版", "周志明");
             logger.info("reflectPrivateConstructor book = " + book.toString());

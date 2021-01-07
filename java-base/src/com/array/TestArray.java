@@ -13,6 +13,8 @@ public class TestArray {
 
 class Score {
     public int[][] scores = {{80, 70, 65}, {50, 60, 35}, {120, 80, 90}};
+    // 数组两种声明方式，下面这种也可以
+    // public int[][] scores = {{80, 70, 65}, {50, 60, 35}, {120, 80, 90}};
 
     public void calcAverage() {
         int sum = 0;

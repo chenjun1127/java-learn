@@ -5,7 +5,7 @@ package com.data;
  * @Author: chenjun
  * @Date: 2021/1/14 11:45
  */
-public class BaseConversion {
+public class BaseConvert {
     public static void main(String[] args) {
         int i = 20;
         String binaryString = Integer.toBinaryString(i);

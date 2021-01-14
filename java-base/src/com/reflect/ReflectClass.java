@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
 /**
- * @Description: java反映 参考：https://www.jianshu.com/p/9be58ee20dee
+ * @Description: java反射 参考：https://www.jianshu.com/p/9be58ee20dee
  * @Author: chenjun
  * @Date: 2020/12/18 14:33
  */

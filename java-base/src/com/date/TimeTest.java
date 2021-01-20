@@ -32,13 +32,13 @@ public class TimeTest {
         }
     }
 
-    public static void testCalendar(long times) {
+    private static void testCalendar(long times) {
         for (int i = 0; i < times; i++) {
             long currentTime = Calendar.getInstance().getTimeInMillis();
         }
     }
 
-    public static void testDate(long times) {
+    private static void testDate(long times) {
         for (int i = 0; i < times; i++) {
             long currentTime = new Date().getTime();
         }

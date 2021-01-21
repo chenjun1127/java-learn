@@ -1,5 +1,6 @@
 package com.data;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 /**
@@ -24,6 +25,12 @@ public class StringTest {
         System.out.println(s3);
         String s4 = new String(chars, 2, 3);
         System.out.println(s4);
+        try {
+            String s5 = new String(s3.getBytes("GB2312"),"ISO-8859-1");
+            System.out.println(s5);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void testChar() {

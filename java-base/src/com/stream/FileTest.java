@@ -64,6 +64,7 @@ public class FileTest {
         }
 
     }
+
     /**
      * 删除文件
      */
@@ -73,17 +74,27 @@ public class FileTest {
         File[] fileList = file.listFiles();
         for (int i = 0; i < (fileList != null ? fileList.length : 0); i++) {
             temp = fileList[i];
-            if (temp.getName().endsWith(type)) {
+            if (temp.isFile()) {
+                if (temp.getName().endsWith(type)) {
+                    try {
+                        Files.delete(Paths.get(path + "\\" + temp.getName()));
+                        System.out.println("删除文件成功，文件路径：" + path + "\\" + temp.getName());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("删除文件失败");
+                    }
+                }
+            } else {
                 try {
-                    Files.delete(Paths.get(path + "\\" + temp.getName()));
-                    System.out.println("删除文件成功，文件路径：" + path + "\\" + temp.getName());
+                    Files.delete(Paths.get(path));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    System.out.println("删除文件失败");
                 }
+                System.out.println("删除文件夹成功，路径：" + path);
             }
         }
     }
+
     /**
      * 定时任务
      */

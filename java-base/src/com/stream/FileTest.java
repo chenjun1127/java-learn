@@ -64,22 +64,29 @@ public class FileTest {
         }
 
     }
-
-    private static void deleteFile() {
-        String fileDirname = dirname + "\\" + pathname;
-        File file = new File(fileDirname);
-        if (file.exists()) {
-            try {
-                Files.delete(Paths.get(fileDirname));
-                System.out.println("删除" + fileDirname + " 成功");
-            } catch (IOException e) {
-                e.printStackTrace();
+    /**
+     * 删除文件
+     */
+    private static void deleteFile(String path, String type) {
+        File file = new File(path);
+        File temp = null;
+        File[] fileList = file.listFiles();
+        for (int i = 0; i < (fileList != null ? fileList.length : 0); i++) {
+            temp = fileList[i];
+            if (temp.getName().endsWith(type)) {
+                try {
+                    Files.delete(Paths.get(path + "\\" + temp.getName()));
+                    System.out.println("删除文件成功，文件路径：" + path + "\\" + temp.getName());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("删除文件失败");
+                }
             }
-        } else {
-            System.out.println(fileDirname + "不存在");
         }
     }
-
+    /**
+     * 定时任务
+     */
     private static void scheduleTask() {
         // 时间间隔
         long PERIOD_DAY = 24 * 60 * 60 * 1000;
@@ -99,7 +106,7 @@ public class FileTest {
             @Override
             public void run() {
                 System.out.println("----设定要指定任务-----");
-                deleteFile();
+                deleteFile(dirname, "txt");
             }
         }, date, PERIOD_DAY);
     }

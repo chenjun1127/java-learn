@@ -21,7 +21,7 @@ public class DouDiZhu {
                 poker.add(color + number);
             }
         }
-        // 洗牌
+        // 洗牌，所有元素随机排序，使用shuffle方法
         Collections.shuffle(poker);
         System.out.println("洗牌之后的牌：" + poker);
         // 发牌

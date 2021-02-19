@@ -3,7 +3,6 @@ package com.collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @Description: 多线程下ArrayList

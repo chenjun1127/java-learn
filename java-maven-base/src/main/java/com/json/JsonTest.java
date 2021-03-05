@@ -63,14 +63,22 @@ public class JsonTest {
     }
 
     /**
-     * @Description: 通过javaben生成json
+     * @Description: 通过javabean生成json
      * @Return void
      */
     public static void createJsonByJavaBean() {
+        JSONObject jsonObject = new JSONObject(createGirl());
+        System.out.println("通过javabean生成json：\n" + jsonObject.toString() + "\n");
+    }
+    /**
+     * @Description: 生成girl对象
+     * @Return com.entities.Girl
+     */
+    public static Girl createGirl() {
         Girl girl = new Girl();
         girl.setName("Lucy");
         girl.setAge(26);
-        girl.setFeatures(new HashMap<String, Integer>() {
+        girl.setFeatures(new HashMap<>(16) {
             private static final long serialVersionUID = 1L;
 
             {
@@ -78,11 +86,8 @@ public class JsonTest {
                 put("weight", 50);
             }
         });
-        girl.setBoyfriend(null);
-        girl.setHobbies(new String[]{"yoga", "swimming"});
         girl.setBirthday("1996-02-15");
-        JSONObject jsonObject = new JSONObject(girl);
-        System.out.println("通过javaben生成json：\n" + jsonObject.toString() + "\n");
+        return girl;
     }
 
 }

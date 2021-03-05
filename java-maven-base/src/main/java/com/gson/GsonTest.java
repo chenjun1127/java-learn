@@ -18,7 +18,7 @@ public class GsonTest {
         Girl girl = new Girl();
         girl.setName("Lucy");
         girl.setAge(26);
-        girl.setFeatures(new HashMap<String, Integer>() {
+        girl.setFeatures(new HashMap<String, Integer>(16) {
             private static final long serialVersionUID = 1L;
 
             {

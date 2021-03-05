@@ -1,14 +1,18 @@
 package com.gson;
 
-import java.lang.reflect.Field;
-import java.util.Date;
-import java.util.HashMap;
-
+import com.entities.Girl;
 import com.google.gson.FieldNamingStrategy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.json.Girl;
 
+import java.lang.reflect.Field;
+import java.util.Date;
+import java.util.HashMap;
+/**
+ * @Description:
+ * @Author: chenjun
+ * @Date: 2021/3/5 9:42
+ */
 public class GsonTest {
     public static void main(String[] args) {
         Girl girl = new Girl();
@@ -31,13 +35,14 @@ public class GsonTest {
         createJsonWithGsonChangeFields(girl);
     }
 
-    /*
-     * 	通过javaben生成json
+    /**
+     * @Description: 通过javabean生成json
+     * @Return void
      */
 
     public static void createJsonWithGsonMain(Object obj) {
         Gson gson = new Gson();
-        System.out.println("通过javaben生成json：\n" + gson.toJson(obj) + "\n");
+        System.out.println("通过javabean生成json：\n" + gson.toJson(obj) + "\n");
     }
 
     public static void createJsonWithGsonBeautify(Object obj) {
@@ -48,7 +53,8 @@ public class GsonTest {
     }
 
     /**
-     * @param obj 重写字段，格式化时间
+     * @Description: 重写字段，格式化时间
+     * @Return void
      */
     public static void createJsonWithGsonChangeFields(Object obj) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -58,7 +64,7 @@ public class GsonTest {
 
             @Override
             public String translateName(Field f) {
-                if (f.getName().equals("name")) {
+                if ("name".equals(f.getName())) {
                     return "NAME";
                 }
                 return f.getName();

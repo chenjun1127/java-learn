@@ -22,6 +22,7 @@ class RunnableInit implements Runnable {
 		System.out.println("Creating " + threadName);
 	}
 
+	@Override
 	public void run() {
 		for (int i = 4; i > 0; i--) {
 			System.out.println("线程：" + threadName + "," + i);

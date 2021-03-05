@@ -20,6 +20,7 @@ class ThreadInit extends Thread {
 		this.threadName = name;
 	}
 
+	@Override
 	public void run() {
 		for (int i = 4; i > 0; i--) {
 			System.out.println("线程：" + threadName + "," + i);

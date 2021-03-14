@@ -20,7 +20,7 @@ public class DynamicProxyTest {
         InvocationHandler invocationHandler1 = new Bar(louis);
         InvocationHandler invocationHandler2 = new Bar(hennessy);
         SaleWine dynamicProxy1 = (SaleWine) Proxy.newProxyInstance(Louis.class.getClassLoader(), Louis.class.getInterfaces(), invocationHandler1);
-        SaleWine dynamicProxy2 = (SaleWine) Proxy.newProxyInstance(Louis.class.getClassLoader(), Louis.class.getInterfaces(), invocationHandler2);
+        SaleWine dynamicProxy2 = (SaleWine) Proxy.newProxyInstance(Hennessy.class.getClassLoader(), Hennessy.class.getInterfaces(), invocationHandler2);
         dynamicProxy1.sale();
         dynamicProxy2.sale();
     }
